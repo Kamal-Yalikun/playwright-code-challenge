@@ -46,8 +46,7 @@ async function move_a_piece(page:Page, originalSquare:String, newSquare:String){
         const actionabilityExpect = expect.configure({ timeout: 250 });
         await originalSquareLocator.click();
         await actionabilityExpect (originalSquareLocator).toHaveAttribute('src',testerActiveSqSrcAttr);
-        }).toPass({intervals: [250, 250, 500]});      
-    await expect (originalSquareLocator).toHaveAttribute('src',testerActiveSqSrcAttr);
+        }).toPass({intervals: [250, 250, 500]});
     await newSquareLocator.click();
     await expect (originalSquareLocator).toHaveAttribute('src',blankGraySqSrcAttr);
     await expect(messageInstruction).toContainText(makeAMoveText);
